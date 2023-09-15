@@ -8,3 +8,9 @@ export type QueryResponse = {
     rows: Person[];
     rowCount: number;
 }
+
+export type CustomError = {
+    type: string;
+    message: string;
+    stack: Error;
+  };
