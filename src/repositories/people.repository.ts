@@ -1,4 +1,4 @@
-import db from "database/database.connections";
+import db from "../database/database.connections";
 import { Person } from "protocols";
 
 export async function randomPersonRepository() {
