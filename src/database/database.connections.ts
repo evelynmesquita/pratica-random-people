@@ -1,13 +1,13 @@
 import pg from "pg";
+import dotenv from "dotenv";
 
+dotenv.config();
 const { Pool } = pg;
+const configDatabase: Object = {
+  connectionString: process.env.DATABASE_URL,
+  ssl: process.env.mode === "prod" ? true : false,
+};
 
-const connection = new Pool({
-  host: "localhost",
-  port: 5432,
-  user: "postgres", // seu user
-  password: "157228", // sua senha
-  database: "people"
-})
+const db = new Pool(configDatabase);
 
-export { connection };
+export default db;
